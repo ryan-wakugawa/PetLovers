@@ -18,11 +18,11 @@ while (execucao) {
 
     switch (opcao) {
         case 1:
-            let cadastro = new CadastroCliente(empresa.getClientes)
+            let cadastro = new CadastroCliente(empresa.getClientes())
             cadastro.cadastrar()
             break;
         case 2:
-            let listagem = new ListagemClientes(empresa.getClientes)
+            let listagem = new ListagemClientes(empresa.getClientes())
             listagem.listar()
             break;
         case 0:

@@ -15,6 +15,7 @@ export default class Cliente {
     private produtosConsumidos: Array<Produto>
     private servicosConsumidos: Array<Servico>
     private pets: Array<Pet>
+
     constructor(nome: string, nomeSocial: string, cpf: CPF) {
         this.nome = nome
         this.nomeSocial = nomeSocial
@@ -26,25 +27,76 @@ export default class Cliente {
         this.servicosConsumidos = []
         this.pets = []
     }
+
+    public get getNome(): string {
+        return this.nome;
+    }
+
+    public set setNome(nome: string) {
+        this.nome = nome;
+    }
+
+    public get getNomeSocial(): string {
+        return this.nomeSocial;
+    }
+
+    public set setNomeSocial(nomeSocial: string) {
+        this.nomeSocial = nomeSocial;
+    }
+
     public get getCpf(): CPF {
-        return this.cpf
+        return this.cpf;
     }
+
+    public set setCpf(cpf: CPF) {
+        this.cpf = cpf;
+    }
+
     public get getRgs(): Array<RG> {
-        return this.rgs
+        return this.rgs;
     }
+
+    public set setRgs(rgs: Array<RG>) {
+        this.rgs = rgs;
+    }
+
     public get getDataCadastro(): Date {
-        return this.dataCadastro
+        return this.dataCadastro;
     }
+
+    public set setDataCadastro(dataCadastro: Date) {
+        this.dataCadastro = dataCadastro;
+    }
+
     public get getTelefones(): Array<Telefone> {
-        return this.telefones
+        return this.telefones;
     }
+
+    public set setTelefones(telefones: Array<Telefone>) {
+        this.telefones = telefones;
+    }
+
     public get getProdutosConsumidos(): Array<Produto> {
-        return this.produtosConsumidos
+        return this.produtosConsumidos;
     }
+
+    public set setProdutosConsumidos(produtosConsumidos: Array<Produto>) {
+        this.produtosConsumidos = produtosConsumidos;
+    }
+
     public get getServicosConsumidos(): Array<Servico> {
-        return this.servicosConsumidos
+        return this.servicosConsumidos;
     }
-    public get getPets(): Array<Pet>{
-        return this.pets
+
+    public set setServicosConsumidos(servicosConsumidos: Array<Servico>) {
+        this.servicosConsumidos = servicosConsumidos;
+    }
+
+    public get getPets(): Array<Pet> {
+        return this.pets;
+    }
+
+    public set setPets(pets: Array<Pet>) {
+        this.pets = pets;
     }
 }
