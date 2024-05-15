@@ -1,5 +1,6 @@
-import Entrada from "../io/entrada";
-import Pet from "../modelo/pet";
+import Entrada from "../../io/entrada";
+import Cliente from "../../modelo/cliente";
+import Pet from "../../modelo/pet";
 import Cadastro from "./cadastro";
 
 export default class CadastroPet extends Cadastro{
@@ -18,6 +19,6 @@ export default class CadastroPet extends Cadastro{
         let tipo = this.entrada.receberTexto('Informe o tipo do pet: ')
         let pet = new Pet(nome,raca,genero,tipo)
         this.pets.push(pet)
-        console.log('Cadastro consluído!');
+        console.log('Cadastro concluído!');
     }
 }
