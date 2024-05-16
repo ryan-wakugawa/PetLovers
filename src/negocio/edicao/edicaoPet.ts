@@ -1,11 +1,8 @@
 import Entrada from "../../io/entrada";
-import pet from "../../modelo/pet";
-import CPF from "../../modelo/cpf";
 import Pet from "../../modelo/pet";
 import Ediçao from "./edicao";
 
 export default class EdiçaoPet extends Ediçao {
-    private entrada = new Entrada
     public editar(pet: Pet): void {
         console.log(`\nEditando o pet ${pet.getNome}`);
         let nome = this.entrada.receberTexto(`Por favor informe o nome do pet: `)

@@ -4,7 +4,6 @@ import CPF from "../../modelo/cpf";
 import Ediçao from "./edicao";
 
 export default class EdiçaoCliente extends Ediçao {
-    private entrada = new Entrada
     public editar(cliente: Cliente): void {
         let dataErrada = true
         console.log(`\nEditando o cliente ${cliente.getNome}`);

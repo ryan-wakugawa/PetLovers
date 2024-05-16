@@ -5,11 +5,9 @@ import Cadastro from "./cadastro";
 
 export default class CadastroPet extends Cadastro{
     private pets: Array<Pet>;
-    private entrada: Entrada;
     constructor(pets: Array<Pet>){
         super()
         this.pets = pets
-        this.entrada = new Entrada()
     }
     public cadastrar(): void {
         console.log('Início do cadastro do pet:\n');

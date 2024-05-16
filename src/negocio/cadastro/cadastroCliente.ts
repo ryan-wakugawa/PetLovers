@@ -5,11 +5,9 @@ import Cadastro from "./cadastro"
 
 export default class CadastroCliente extends Cadastro {
     private clientes: Array<Cliente>
-    private entrada: Entrada
     constructor(clientes: Array<Cliente>) {
         super()
         this.clientes = clientes
-        this.entrada = new Entrada()
     }
     public cadastrar(): void {
         let dataErrada = true
