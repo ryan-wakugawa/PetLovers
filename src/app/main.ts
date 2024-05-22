@@ -16,6 +16,16 @@ import ListagemPets from "../negocio/listagem/listagemPets";
 import ListagemProdutos from "../negocio/listagem/listagemProduto";
 import ListagemServico from "../negocio/listagem/listagemServico";
 
+let showOptions = (options: Array<string>): number => {
+    console.log('Opções');
+    for (let option in options) {
+        console.log(`${parseInt(option) + 1} - ${options[option]}`);
+    }
+    console.log('0 - Sair');
+    const entrada = new Entrada()
+    return entrada.receberNumero(`Por favor, escolha uma opção: `)
+}
+
 console.log(`Bem-vindo ao melhor sistema de gerenciamento de pet shops e clínicas veterinarias`)
 let empresa = new Empresa()
 let execucao = true
@@ -24,30 +34,15 @@ empresa.getClientes.push(new Cliente('Ryan', 'Ryan', new CPF('50147194814', new 
 empresa.getClientes[0].getPets.push(new Pet('teste', 'golden', 'macho', 'tipo 1'))
 
 while (execucao) {
-    console.log(`Opções:`);
-    console.log(`1 - Cliente`);
-    console.log(`2 - Produtos`);
-    console.log(`3 - Serviços`);
-    console.log(`0 - Sair`);
-
     let entrada = new Entrada()
     let id: number
-    let opcao = entrada.receberNumero(`Por favor, escolha uma opção: `)
+    let opcao = showOptions(['Cliente', 'Pet', 'Produtos', 'Serviços', 'Registros'])
 
     switch (opcao) {
         case 1: //Cliente
             loop: {
                 while (true) {
-                    console.log(`1 - Cadastrar clientes`);
-                    console.log(`2 - Listar clientes`);
-                    console.log(`3 - Editar cliente`);
-                    console.log(`4 - Deletar cliente`);
-                    console.log(`5 - Cadastrar pets`);
-                    console.log(`6 - Listar pets`);
-                    console.log(`7 - Editar pet`);
-                    console.log(`8 - Deletar pet`);
-                    console.log(`0 - Voltar`);
-                    opcao = entrada.receberNumero(`Por favor, escolha uma opção: `)
+                    opcao = showOptions(['Cadastrar clientes', 'Listar clentes', 'Editar clientes', 'Deletar clientes'])
                     switch (opcao) {
                         case 1:
                             let cadastroCliente = new CadastroCliente(empresa.getClientes)
@@ -78,7 +73,21 @@ while (execucao) {
                                 }
                             }
                             break;
-                        case 5:
+                        case 0:
+                            break loop;
+                        default:
+                            console.log(`Operação não entendida :(`)
+                            break
+                    }
+                }
+            }
+            break
+        case 2: //Pet
+            loop: {
+                while (true) {
+                    opcao = showOptions(['Cadastrar pets', 'Listar pets', 'Editar pet', 'Deletar pet'])
+                    switch (opcao) {
+                        case 1:
                             id = entrada.receberNumero(`Insira o ID do cliente cujo pet será cadastrado: `) - 1
                             if (empresa.getClientes[id] == undefined) {
                                 console.log(`Não existe um usuário com esse ID`);
@@ -87,7 +96,7 @@ while (execucao) {
                                 cadastroPet.cadastrar()
                             }
                             break;
-                        case 6:
+                        case 2:
                             id = entrada.receberNumero(`\nInsira o ID do cliente para listar seus pets: `) - 1
                             if (empresa.getClientes[id] == undefined) {
                                 console.log(`Não existe um usuário com esse ID`);
@@ -96,7 +105,7 @@ while (execucao) {
                                 listagemPets.listar()
                             }
                             break;
-                        case 7:
+                        case 3:
                             id = entrada.receberNumero(`Insira o ID do dono do pet: `) - 1
                             if (empresa.getClientes[id] == undefined) {
                                 console.log(`Não existe um usuário com esse ID`);
@@ -110,7 +119,7 @@ while (execucao) {
                                 }
                             }
                             break;
-                        case 8:
+                        case 4:
                             id = entrada.receberNumero(`Insira o ID do pet: `) - 1
                             if (empresa.getClientes[id] == undefined) {
                                 console.log(`Não existe um usuário com esse ID`);
@@ -128,7 +137,7 @@ while (execucao) {
                             }
                             break;
                         case 0:
-                            break loop;
+                            break loop
                         default:
                             console.log(`Operação não entendida :(`)
                             break
@@ -136,17 +145,11 @@ while (execucao) {
                 }
             }
             break
-        case 2: //Produtos
+        case 3: //Produtos
             loop: {
                 while (true) {
-                    console.log(`1 - Cadastrar produtos`);
-                    console.log(`2 - Listar produtos`);
-                    console.log(`3 - Editar produtos`);
-                    console.log(`4 - Deletar produtos`);
-                    console.log(`0 - Sair`);
                     let produtos = empresa.getProdutos
-
-                    opcao = entrada.receberNumero(`Por favor, escolha uma opção: `)
+                    opcao = showOptions(['Cadastrar produto', 'Listar produto', 'Editar produto', 'Deletar produto'])
                     switch (opcao) {
                         case 1:
                             const cadastroProduto = new CadastroProduto(produtos)
@@ -186,17 +189,11 @@ while (execucao) {
                 }
             }
             break
-        case 3: //Serviços
+        case 4: //Serviços
             loop: {
                 while (true) {
-                    console.log(`1 - Cadastrar serviços`);
-                    console.log(`2 - Listar serviços`);
-                    console.log(`3 - Editar serviços`);
-                    console.log(`4 - Deletar serviços`);
-                    console.log(`0 - Sair`);
                     let servicos = empresa.getServicos
-
-                    opcao = entrada.receberNumero(`Por favor, escolha uma opção: `)
+                    opcao = showOptions(['Cadastrar serviço', 'Listar serviço', 'Editar serviço', 'Deletar serviço'])
                     switch (opcao) {
                         case 1:
                             const cadastroServico = new CadastroServico(servicos)
@@ -236,8 +233,31 @@ while (execucao) {
                 }
             }
             break;
-        case 4:
-            break;
+        case 5: //Registro
+            id = entrada.receberNumero(`Insira o ID do cliente: `) - 1
+            let clientExists = empresa.getClientes[id] != undefined
+            if (clientExists) {
+                loop: {
+                    while (true) {
+                        opcao = showOptions(['Registro de produtos', 'Registro de serviços'])
+                        switch (opcao) {
+                            case 1:
+                                new ListagemProdutos(empresa.getClientes[id].getServicosConsumidos).lis
+                                break;
+                            case 2:
+                                new ListagemServico(empresa.getClientes[id].getServicosConsumidos).listarRegistro()
+                                break
+                            case 0:
+                                break loop
+                            default:
+                                break;
+                        }
+                    }
+                } 
+            } else{
+                console.log(`Não existe um usuário com esse ID`);
+            }
+            break
         case 0:
             execucao = false
             console.log(`Até mais`)
