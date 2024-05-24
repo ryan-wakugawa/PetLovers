@@ -17,11 +17,14 @@ export default class ListagemProdutos extends Listagem{
         console.log(`\n`);
     }
     public listarRegistro():void{
-        console.log(`\nRegistro de serviços\n`);
-        this.produtos.forEach(produto => {
-            console.log(`Nome: ${produto.getNome}`);
-            console.log(`--------------------------------------`);
-        });
-        console.log(`\n`);
+        if (this.produtos.length == 0){
+            console.log(`\nNão há registros desse usuário`);            
+        } else{
+            console.log(`\nRegistro de produtos\n`);
+            this.produtos.forEach(produto => {
+                console.log(`Nome: ${produto.getNome}`);
+                console.log(`--------------------------------------`);
+            });
+        }
     }
 }
