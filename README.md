@@ -18,12 +18,9 @@ Atividade:
 
 Você é um empreendedor atento ao potencial do mercado pet e, como um engenheiro de software formidável, decidiu criar uma empresa especializada no desenvolvimento de sistemas para gerenciamento de lojas neste segmento. Sua empresa, Computer4Pet (C4P), visa desenvolver sistemas para atender lojas de comércio eletrônico, pet shops e clínicas veterinárias.
 
-O primeiro projeto de investimento é um sistema CLI (Command-Line Interface) chamado PetLovers (PL), pensado para gerenciar pet shops e/ou clínicas veterinárias. A primeira versão do software foi desenvolvida por uma "software house", acessível pelo endereço: Repositório GitHub.
+O primeiro projeto de investimento é um sistema CLI (Command-Line Interface) chamado PetLovers (PL), pensado para gerenciar pet shops e/ou clínicas veterinárias. A primeira versão do software foi desenvolvida por uma "software house", acessível pelo endereço: [Repositório GitHub](https://github.com/gerson-pn/atvi-pl-typescript). O código original pode ser encontrado no link mencionado anteriormente.
 
-A estrutura do PL está descrita no diagrama de classes na Figura 1, e o código inicial desenvolvido pela empresa contratada pode ser encontrado no repositório mencionado. Até o momento, o sistema permite apenas o cadastro de informações básicas dos clientes.
-Novos Requisitos Funcionais:
-
-## Você irá implementar os seguintes novos requisitos funcionais
+## Requisitos implementados
 - CRUD (Create, Read, Update e Delete) de clientes e seus respectivos Pets.
 - CRUD de produtos e serviços.
 - Registro de consumo dos produtos ou serviços que cada cliente adquiriu.
@@ -56,3 +53,6 @@ Novos Requisitos Funcionais:
 
     src/ - Contém os arquivos fonte do projeto
     out/ - Contém os arquivos compilados
+
+## Créditos
+Atividade elaborada pelo [Professor Dr. Eng. Gerson Penha](https://github.com/gerson-pn)
