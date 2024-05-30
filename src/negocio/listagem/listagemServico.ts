@@ -12,20 +12,8 @@ export default class ListagemServico extends Listagem{
         this.servicos.forEach(servico => {
             console.log(`ID: ${this.servicos.indexOf(servico)+1}`);
             console.log(`Nome: ${servico.getNome}`);
+            console.log(`Valor: R$${servico.getValor}`);
             console.log(`--------------------------------------`);
         });
-        console.log(`\n`);
-    }
-    public listarRegistro():void{
-        if (this.servicos.length == 0){
-            console.log(`\nNão há registros desse usuário`);
-        } else{
-            console.log(`\nRegistro de serviços\n`);
-            this.servicos.forEach(servico => {
-                console.log(`Nome: ${servico.getNome}`);
-                console.log(`--------------------------------------`);
-            });
-        }
-        console.log(`\n`);
     }
 }

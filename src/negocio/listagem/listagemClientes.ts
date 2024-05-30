@@ -18,17 +18,4 @@ export default class ListagemClientes extends Listagem {
         });
         console.log(`\n`);
     }
-    public listarConsumo():void{
-        console.log(`\nRanking de consumo: `);
-        let ranking:any[] = this.clientes.map((cliente) =>{
-            let quantidadeProdutos:number = cliente.getProdutosConsumidos.length
-            let quantidadeServicos:number = cliente.getServicosConsumidos.length
-            let quantidadeTotal:number = quantidadeProdutos+quantidadeServicos
-            return [cliente.getNome, quantidadeTotal]
-        })
-        ranking.slice(0,10).forEach((cliente)=>{
-            console.log(`${ranking.indexOf(cliente)+1}º - ${cliente[0]}:\t${cliente[1]}`);
-            console.log(`--------------------------------------`);
-        })
-    }
 }

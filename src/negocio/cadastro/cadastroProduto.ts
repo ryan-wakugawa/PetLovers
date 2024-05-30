@@ -10,7 +10,8 @@ export default class CadastroProduto extends Cadastro{
     }
     public cadastrar(): void {
         let nome = this.entrada.receberTexto(`Insira o nome do produto: `)
-        let produto = new Produto(nome)
+        let valor = this.entrada.receberNumero(`Insira o valor do produto: `)
+        let produto = new Produto(nome, valor)
         this.produtos.push(produto)
         console.log('Cadastro concluído!');
     }

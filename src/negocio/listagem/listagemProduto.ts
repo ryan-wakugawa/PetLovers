@@ -12,9 +12,9 @@ export default class ListagemProdutos extends Listagem{
         this.produtos.forEach(produto => {
             console.log(`ID: ${this.produtos.indexOf(produto)+1}`);
             console.log(`Nome: ${produto.getNome}`);
+            console.log(`Valor: R$${produto.getValor}`);
             console.log(`--------------------------------------`);
         });
-        console.log(`\n`);
     }
     public listarRegistro():void{
         if (this.produtos.length == 0){

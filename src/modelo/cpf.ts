@@ -7,8 +7,7 @@ export default class CPF {
         this.dataEmissao = dataEmissao
     }
 
-    public get getValor(): string
- {
+    public get getValor(): string {
         return this.valor;
     }
 
