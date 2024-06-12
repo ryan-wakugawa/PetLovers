@@ -36,13 +36,13 @@ export default class Compras extends Component<props> {
                         <div className="input-group m-2">
                             <select className="form-select" placeholder="Pet" aria-label="petDono">
                                 <option selected>Produto</option>
-                                {this.gerarOpcoes(['Pet 1', 'Pet 2', 'Pet 3'])}
+                                {this.gerarOpcoes(['Produto 1', 'Produto 2', 'Produto 3'])}
                             </select>
                         </div>
                         <div className="input-group m-2">
                             <select className="form-select" placeholder="Pet" aria-label="petDono">
-                                <option selected>Produto</option>
-                                {this.gerarOpcoes(['Pet 1', 'Pet 2', 'Pet 3'])}
+                                <option selected>Serviço</option>
+                                {this.gerarOpcoes(['Serviço 1', 'Serviço 2', 'Serviço 3'])}
                             </select>
                         </div>
                     </div>
