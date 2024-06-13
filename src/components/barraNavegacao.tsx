@@ -1,22 +1,23 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import React from "react";
 
-export default function BarraNavegacao(props) {
+const BarraNavegacao = ({ tema, botoes, seletorView }) => {
     const gerarListaBotoes = () => {
-        if (props.botoes.length <= 0) {
-            return <></>
+        if (botoes.length <= 0) {
+            return null;
         } else {
-            let lista = props.botoes.map(valor =>
+            return botoes.map((valor) => (
                 <li key={valor} className="nav-item">
-                    <a className="nav-link" href="#" onClick={(e) => props.seletorView(valor, e)}>{valor}</a>
+                    <a className="nav-link" href="#" onClick={(e) => seletorView(valor, e)}>
+                        {valor}
+                    </a>
                 </li>
-            )
-            return lista
+            ));
         }
-    }
+    };
 
-    let tema = props.tema
     return (
         <>
             <nav className="navbar navbar-expand-lg" data-bs-theme="light" style={{ backgroundColor: tema, marginBottom: 10 }}>
@@ -33,5 +34,7 @@ export default function BarraNavegacao(props) {
                 </div>
             </nav>
         </>
-    )
-}
+    );
+};
+
+export default BarraNavegacao;

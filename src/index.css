@@ -7,7 +7,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body {
+  height: 100%
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button{
+  background-color: #e3f2fd;
+}
+
+.cadastro {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  display: flex;
 }
