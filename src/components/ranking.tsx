@@ -61,27 +61,29 @@ export default class Ranking extends Component<Props, State> {
                     />
                     {tela === 'Clientes' && (
                         <div className="mt-4">
-                            <div className="d-flex align-items-center">
-                                <label htmlFor="clienteSwitch" className="me-2">Valor</label>
-                                <Switch
-                                    id="clienteSwitch"
-                                    onChange={this.toggleClienteView}
-                                    checked={clienteView}
-                                    offColor="#888"
-                                    onColor="#0d6efd"
-                                    checkedIcon={false}
-                                    uncheckedIcon={false}
-                                />
-                                <label htmlFor="clienteSwitch" className="ms-2">Quantidade</label>
-                            </div>
                             {clienteView ? (
                                 <div>
-                                    <h2>10 Clientes que mais consumiram (quantidade)</h2>
-                                    <table className="table table-striped">
-                                        <thead>
+                                    <div className="d-flex justify-content-between">
+                                        <h2>10 Clientes que mais consumiram (quantidade)</h2>
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="clienteSwitch" className="me-2">Valor</label>
+                                            <Switch
+                                                id="clienteSwitch"
+                                                onChange={this.toggleClienteView}
+                                                checked={clienteView}
+                                                offColor="#888"
+                                                onColor="#0d6efd"
+                                                checkedIcon={false}
+                                                uncheckedIcon={false}
+                                            />
+                                            <label htmlFor="clienteSwitch" className="ms-2">Quantidade</label>
+                                        </div>
+                                    </div>
+                                    <table className="table table-bordered">
+                                        <thead className="thead-dark">
                                             <tr>
-                                                <th>Cliente</th>
-                                                <th>Quantidade</th>
+                                                <th scope="col">Cliente</th>
+                                                <th scope="col">Quantidade</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -103,12 +105,27 @@ export default class Ranking extends Component<Props, State> {
                                 </div>
                             ) : (
                                 <div>
-                                    <h2>5 Clientes que mais consumiram (valor)</h2>
-                                    <table className="table table-striped">
-                                        <thead>
+                                    <div className="d-flex justify-content-between">
+                                        <h2>5 Clientes que mais consumiram (valor)</h2>
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="clienteSwitch" className="me-2">Valor</label>
+                                            <Switch
+                                                id="clienteSwitch"
+                                                onChange={this.toggleClienteView}
+                                                checked={clienteView}
+                                                offColor="#888"
+                                                onColor="#0d6efd"
+                                                checkedIcon={false}
+                                                uncheckedIcon={false}
+                                            />
+                                            <label htmlFor="clienteSwitch" className="ms-2">Quantidade</label>
+                                        </div>
+                                    </div>
+                                    <table className="table table-bordered">
+                                        <thead className="thead-dark">
                                             <tr>
-                                                <th>Cliente</th>
-                                                <th>Valor</th>
+                                                <th scope="col">Cliente</th>
+                                                <th scope="col">Valor</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -132,27 +149,30 @@ export default class Ranking extends Component<Props, State> {
                     )}
                     {tela === 'Mais consumidos' && (
                         <div className="mt-4">
-                            <div className="d-flex align-items-center">
-                                <label htmlFor="servicoProdutoSwitch" className="me-2">Produtos</label>
-                                <Switch
-                                    id="servicoProdutoSwitch"
-                                    onChange={this.toggleServicoProdutoView}
-                                    checked={servicoProdutoView}
-                                    offColor="#888"
-                                    onColor="#0d6efd"
-                                    checkedIcon={false}
-                                    uncheckedIcon={false}
-                                />
-                                <label htmlFor="servicoProdutoSwitch" className="ms-2">Serviços</label>
-                            </div>
                             {servicoProdutoView ? (
                                 <div>
-                                    <h2>Serviços mais consumidos</h2>
-                                    <table className="table table-striped">
-                                        <thead>
+                                    <div className="d-flex justify-content-between">
+                                        <h2>Serviços mais consumidos</h2>
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="servicoProdutoSwitch" className="me-2">Produtos</label>
+                                            <Switch
+                                                id="servicoProdutoSwitch"
+                                                onChange={this.toggleServicoProdutoView}
+                                                checked={servicoProdutoView}
+                                                offColor="#888"
+                                                onColor="#0d6efd"
+                                                checkedIcon={false}
+                                                uncheckedIcon={false}
+                                            />
+                                            <label htmlFor="servicoProdutoSwitch" className="ms-2">Serviços</label>
+                                        </div>
+                                    </div>
+
+                                    <table className="table table-bordered">
+                                        <thead className="thead-dark">
                                             <tr>
-                                                <th>Serviço</th>
-                                                <th>Quantidade</th>
+                                                <th scope="col">Serviço</th>
+                                                <th scope="col">Quantidade</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -173,12 +193,28 @@ export default class Ranking extends Component<Props, State> {
                                 </div>
                             ) : (
                                 <div>
-                                    <h2>Produtos mais consumidos</h2>
-                                    <table className="table table-striped">
-                                        <thead>
+                                    <div className="d-flex justify-content-between">
+                                        <h2>Produtos mais consumidos</h2>
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="servicoProdutoSwitch" className="me-2">Produtos</label>
+                                            <Switch
+                                                id="servicoProdutoSwitch"
+                                                onChange={this.toggleServicoProdutoView}
+                                                checked={servicoProdutoView}
+                                                offColor="#888"
+                                                onColor="#0d6efd"
+                                                checkedIcon={false}
+                                                uncheckedIcon={false}
+                                            />
+                                            <label htmlFor="servicoProdutoSwitch" className="ms-2">Serviços</label>
+                                        </div>
+                                    </div>
+
+                                    <table className="table table-bordered">
+                                        <thead className="thead-dark">
                                             <tr>
-                                                <th>Produto</th>
-                                                <th>Quantidade</th>
+                                                <th scope="col">Produto</th>
+                                                <th scope="col">Quantidade</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -202,28 +238,30 @@ export default class Ranking extends Component<Props, State> {
                     )}
                     {tela === 'Tipo de pet' && (
                         <div className="mt-4">
-                            <div className="d-flex align-items-center">
-                                <label htmlFor="tipoPetSwitch" className="me-2">Produtos</label>
-                                <Switch
-                                    id="tipoPetSwitch"
-                                    onChange={this.toggleServicoProdutoView}
-                                    checked={servicoProdutoView}
-                                    offColor="#888"
-                                    onColor="#0d6efd"
-                                    checkedIcon={false}
-                                    uncheckedIcon={false}
-                                />
-                                <label htmlFor="tipoPetSwitch" className="ms-2">Serviços</label>
-                            </div>
                             {servicoProdutoView ? (
                                 <div>
-                                    <h2>Serviços por Tipo de Pet</h2>
-                                    <table className="table table-striped">
-                                        <thead>
+                                    <div className="d-flex justify-content-between">
+                                        <h2>Serviços por Tipo de Pet</h2>
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="tipoPetSwitch" className="me-2">Produtos</label>
+                                            <Switch
+                                                id="tipoPetSwitch"
+                                                onChange={this.toggleServicoProdutoView}
+                                                checked={servicoProdutoView}
+                                                offColor="#888"
+                                                onColor="#0d6efd"
+                                                checkedIcon={false}
+                                                uncheckedIcon={false}
+                                            />
+                                            <label htmlFor="tipoPetSwitch" className="ms-2">Serviços</label>
+                                        </div>
+                                    </div>
+                                    <table className="table table-bordered">
+                                        <thead className="thead-dark">
                                             <tr>
-                                                <th>Tipo de Pet</th>
-                                                <th>Serviço</th>
-                                                <th>Quantidade</th>
+                                                <th scope="col">Tipo de Pet</th>
+                                                <th scope="col">Serviço</th>
+                                                <th scope="col">Quantidade</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -247,13 +285,28 @@ export default class Ranking extends Component<Props, State> {
                                 </div>
                             ) : (
                                 <div>
-                                    <h2>Produtos por Tipo de Pet</h2>
-                                    <table className="table table-striped">
-                                        <thead>
+                                    <div className="d-flex justify-content-between">
+                                        <h2>Produtos por Tipo de Pet</h2>
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="tipoPetSwitch" className="me-2">Produtos</label>
+                                            <Switch
+                                                id="tipoPetSwitch"
+                                                onChange={this.toggleServicoProdutoView}
+                                                checked={servicoProdutoView}
+                                                offColor="#888"
+                                                onColor="#0d6efd"
+                                                checkedIcon={false}
+                                                uncheckedIcon={false}
+                                            />
+                                            <label htmlFor="tipoPetSwitch" className="ms-2">Serviços</label>
+                                        </div>
+                                    </div>
+                                    <table className="table table-bordered">
+                                        <thead className="thead-dark">
                                             <tr>
-                                                <th>Tipo de Pet</th>
-                                                <th>Produto</th>
-                                                <th>Quantidade</th>
+                                                <th scope="col">Tipo de Pet</th>
+                                                <th scope="col">Produto</th>
+                                                <th scope="col">Quantidade</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -280,28 +333,30 @@ export default class Ranking extends Component<Props, State> {
                     )}
                     {tela === 'Raça de Pet' && (
                         <div className="mt-4">
-                            <div className="d-flex align-items-center">
-                                <label htmlFor="racaPetSwitch" className="me-2">Produtos</label>
-                                <Switch
-                                    id="tipoPetSwitch"
-                                    onChange={this.toggleServicoProdutoView}
-                                    checked={servicoProdutoView}
-                                    offColor="#888"
-                                    onColor="#0d6efd"
-                                    checkedIcon={false}
-                                    uncheckedIcon={false}
-                                />
-                                <label htmlFor="tipoPetSwitch" className="ms-2">Serviços</label>
-                            </div>
                             {servicoProdutoView ? (
                                 <div>
-                                    <h2>Serviços por Raça de Pet</h2>
-                                    <table className="table table-striped">
-                                        <thead>
+                                    <div className="d-flex justify-content-between">
+                                        <h2>Serviços por Raça de Pet</h2>
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="racaPetSwitch" className="me-2">Produtos</label>
+                                            <Switch
+                                                id="tipoPetSwitch"
+                                                onChange={this.toggleServicoProdutoView}
+                                                checked={servicoProdutoView}
+                                                offColor="#888"
+                                                onColor="#0d6efd"
+                                                checkedIcon={false}
+                                                uncheckedIcon={false}
+                                            />
+                                            <label htmlFor="tipoPetSwitch" className="ms-2">Serviços</label>
+                                        </div>
+                                    </div>
+                                    <table className="table table-bordered">
+                                        <thead className="thead-dark">
                                             <tr>
-                                                <th>Raça de Pet</th>
-                                                <th>Serviço</th>
-                                                <th>Quantidade</th>
+                                                <th scope="col">Raça de Pet</th>
+                                                <th scope="col">Serviço</th>
+                                                <th scope="col">Quantidade</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -325,13 +380,28 @@ export default class Ranking extends Component<Props, State> {
                                 </div>
                             ) : (
                                 <div>
-                                    <h2>Produtos por Raça de Pet</h2>
-                                    <table className="table table-striped">
-                                        <thead>
+                                    <div className="d-flex justify-content-between">
+                                        <h2>Produtos por Raça de Pet</h2>
+                                        <div className="d-flex align-items-center">
+                                            <label htmlFor="racaPetSwitch" className="me-2">Produtos</label>
+                                            <Switch
+                                                id="tipoPetSwitch"
+                                                onChange={this.toggleServicoProdutoView}
+                                                checked={servicoProdutoView}
+                                                offColor="#888"
+                                                onColor="#0d6efd"
+                                                checkedIcon={false}
+                                                uncheckedIcon={false}
+                                            />
+                                            <label htmlFor="tipoPetSwitch" className="ms-2">Serviços</label>
+                                        </div>
+                                    </div>
+                                    <table className="table table-bordered">
+                                        <thead className="thead-dark">
                                             <tr>
-                                                <th>Raça de Pet</th>
-                                                <th>Produto</th>
-                                                <th>Quantidade</th>
+                                                <th scope="col">Raça de Pet</th>
+                                                <th scope="col">Produto</th>
+                                                <th scope="col">Quantidade</th>
                                             </tr>
                                         </thead>
                                         <tbody>
