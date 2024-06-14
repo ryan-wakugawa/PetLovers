@@ -1,6 +1,4 @@
-import React from "react";
-
-const FormularioCadastroCliente = ({ tema }) => {
+export default function FormularioCadastroCliente({tema}){
   return (
     <div className="h-100 container-fluid">
       <h3>Cliente</h3>
@@ -66,7 +64,7 @@ const FormularioCadastroCliente = ({ tema }) => {
           <button
             className="btn btn-outline-secondary"
             type="button"
-            style={{ background: tema }}
+            style={{ background: tema}}
           >
             Cadastrar
           </button>
@@ -75,5 +73,3 @@ const FormularioCadastroCliente = ({ tema }) => {
     </div>
   );
 };
-
-export default FormularioCadastroCliente;

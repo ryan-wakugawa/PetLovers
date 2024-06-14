@@ -1,9 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import React from "react";
 
-const BarraNavegacao = ({ tema, botoes, seletorView }) => {
+interface Props{
+    tema: string,
+    botoes: string[],
+    seletorView: Function
+}
+
+const BarraNavegacao = ({ tema, botoes, seletorView }: Props) => {
     const gerarListaBotoes = () => {
         if (botoes.length <= 0) {
             return null;

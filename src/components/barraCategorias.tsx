@@ -1,14 +1,13 @@
-import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../index.css'; // Custom styles
 
-interface BarraCategoriasProps {
-  tema: string;
-  categorias: string[];
-  seletorView: (novaTela: string, evento: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+interface Props{
+    tema: string,
+    categorias: string[],
+    seletorView: Function
 }
 
-const BarraCategorias: React.FC<BarraCategoriasProps> = ({ tema, categorias, seletorView }) => {
+function BarraCategorias ({ tema, categorias, seletorView }: Props){
     return (
         <div className="d-flex btn-group btn-group-toggle my-3 mx-5" data-toggle="buttons">
             {categorias.map((categoria, index) => (
