@@ -14,13 +14,13 @@ export default class Cliente {
     private telefones: Array<Telefone>
     private pets: Array<Pet>
 
-    constructor(nome: string, nomeSocial: string, cpf: CPF) {
+    constructor(nome: string, nomeSocial: string, cpf: CPF, rg: RG[], telefone: Telefone[]) {
         this.nome = nome
         this.nomeSocial = nomeSocial
         this.cpf = cpf
-        this.rgs = []
+        this.rgs = rg
         this.dataCadastro = new Date()
-        this.telefones = []
+        this.telefones = telefone
         this.pets = []
     }
 

@@ -4,7 +4,9 @@ import CPF from "../modelo/cpf";
 import Empresa from "../modelo/empresa";
 import Pet from "../modelo/pet";
 import Produto from "../modelo/produto";
+import RG from "../modelo/rg";
 import Servico from "../modelo/servico";
+import Telefone from "../modelo/telefone";
 import Venda from "../modelo/venda";
 import CadastroCliente from "../negocio/cadastro/cadastroCliente";
 import CadastroPet from "../negocio/cadastro/cadastroPet";
@@ -41,17 +43,17 @@ let servicosEmpresa = empresa.getServicos
 let vendasEmpresa = empresa.getVendas
 
 clientesEmpresa.push(
-    new Cliente('Ryan', 'Ryan', new CPF('50147194814', new Date())),
-    new Cliente('Ana', 'Ana', new CPF('12345678901', new Date())),
-    new Cliente('Bruno', 'Bruno', new CPF('23456789012', new Date())),
-    new Cliente('Carlos', 'Carlos', new CPF('34567890123', new Date())),
-    new Cliente('Diana', 'Diana', new CPF('45678901234', new Date())),
-    new Cliente('Eduardo', 'Eduardo', new CPF('56789012345', new Date())),
-    new Cliente('Fernanda', 'Fernanda', new CPF('67890123456', new Date())),
-    new Cliente('Gabriel', 'Gabriel', new CPF('78901234567', new Date())),
-    new Cliente('Helena', 'Helena', new CPF('89012345678', new Date())),
-    new Cliente('Igor', 'Igor', new CPF('90123456789', new Date())),
-    new Cliente('Juliana', 'Juliana', new CPF('01234567890', new Date()))
+    new Cliente('Ryan', 'Ryan', new CPF('50147194814', new Date()), [new RG('12345678', new Date()), new RG('87654321', new Date())], [new Telefone('11', '987654321')]),
+    new Cliente('Ana', 'Ana', new CPF('12345678901', new Date()), [new RG('23456789', new Date())], [new Telefone('21', '123456789'), new Telefone('21', '987654321')]),
+    new Cliente('Bruno', 'Bruno', new CPF('23456789012', new Date()), [new RG('34567890', new Date())], [new Telefone('31', '234567890')]),
+    new Cliente('Carlos', 'Carlos', new CPF('34567890123', new Date()), [new RG('45678901', new Date()), new RG('10987654', new Date())], [new Telefone('41', '345678901'), new Telefone('41', '987654321')]),
+    new Cliente('Diana', 'Diana', new CPF('45678901234', new Date()), [new RG('56789012', new Date())], [new Telefone('51', '456789012')]),
+    new Cliente('Eduardo', 'Eduardo', new CPF('56789012345', new Date()), [new RG('67890123', new Date())], [new Telefone('61', '567890123')]),
+    new Cliente('Fernanda', 'Fernanda', new CPF('67890123456', new Date()), [new RG('78901234', new Date()), new RG('43210987', new Date())], [new Telefone('71', '678901234')]),
+    new Cliente('Gabriel', 'Gabriel', new CPF('78901234567', new Date()), [new RG('89012345', new Date())], [new Telefone('81', '789012345')]),
+    new Cliente('Helena', 'Helena', new CPF('89012345678', new Date()), [new RG('90123456', new Date())], [new Telefone('91', '890123456'), new Telefone('91', '123456789')]),
+    new Cliente('Igor', 'Igor', new CPF('90123456789', new Date()), [new RG('01234567', new Date()), new RG('76543210', new Date())], [new Telefone('92', '901234567')]),
+    new Cliente('Juliana', 'Juliana', new CPF('01234567890', new Date()), [new RG('12345679', new Date())], [new Telefone('93', '012345678')])
 );
 
 clientesEmpresa[0].getPets.push(new Pet('Golden', 'Golden Retriever', 'Macho', 'Cachorro'))
@@ -108,7 +110,7 @@ while (execucao) {
     let cliente: Cliente
     let pet: Pet
 
-    let opcao = showOptions(['Registros', 'Cliente', 'Pet', 'Produtos', 'Serviços', 'Ranking'])
+    let opcao = showOptions(['Registrar', 'Cliente', 'Pet', 'Produtos', 'Serviços', 'Ranking'])
     switch (opcao) {
         case 1: //Registro
             id = entrada.receberNumero(`Insira o ID do cliente: `) - 1
@@ -383,7 +385,7 @@ while (execucao) {
                                     break
                                 case 2:
                                     new RankingServicos(vendasEmpresa).topValor()
-                                    break                                
+                                    break
                                 case 3:
                                     new RankingServicos(vendasEmpresa).maisConsumidos()
                                     break

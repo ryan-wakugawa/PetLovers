@@ -14,6 +14,12 @@ export default class ListagemClientes extends Listagem {
             console.log(`Nome: ` + cliente.nome);
             console.log(`Nome social: ` + cliente.nomeSocial);
             console.log(`CPF: ` + cliente.getCpf.getValor);
+            cliente.getRgs.forEach(rg =>{
+                console.log(`RG: ${rg.getValor}`)
+            })
+            cliente.getTelefones.forEach(telefone =>{
+                console.log(`Telefone: ${telefone.getDdd} ${telefone.getNumero}`)
+            })
             console.log(`--------------------------------------`);
         });
         console.log(`\n`);
