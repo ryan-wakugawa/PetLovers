@@ -1,0 +1,92 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model CompraProduto {
+  id        Int     @id @default(autoincrement())
+  cliente   Cliente @relation(fields: [clienteId], references: [id])
+  clienteId Int
+  pet       Pet     @relation(fields: [petId], references: [id])
+  petId     Int
+  produto   Produto @relation(fields: [produtoId], references: [id])
+  produtoId Int
+}
+
+model CompraServico {
+  id        Int     @id @default(autoincrement())
+  cliente   Cliente @relation(fields: [clienteId], references: [id])
+  clienteId Int
+  pet       Pet     @relation(fields: [petId], references: [id])
+  petId     Int
+  servico   Servico @relation(fields: [servicoId], references: [id])
+  servicoId Int
+}
+
+model Produto {
+  id            Int             @id @default(autoincrement())
+  nome          String
+  CompraProduto CompraProduto[]
+}
+
+model Servico {
+  id            Int             @id @default(autoincrement())
+  nome          String
+  CompraServico CompraServico[]
+}
+
+model Cliente {
+  id            Int             @id @default(autoincrement())
+  nome          String
+  nomeSocial    String
+  cpf           Cpf?
+  rgs           Rg[]
+  telefones     Telefone[]
+  pets          Pet[]
+  dataCadastro  DateTime        @default(now())
+  CompraProduto CompraProduto[]
+  CompraServico CompraServico[]
+}
+
+model Pet {
+  id            Int             @id @default(autoincrement())
+  nome          String
+  tipo          String
+  raca          String
+  genero        String
+  dono          Cliente         @relation(fields: [donoId], references: [id])
+  donoId        Int
+  CompraProduto CompraProduto[]
+  CompraServico CompraServico[]
+}
+
+model Cpf {
+  id          Int      @id @default(autoincrement())
+  valor       String
+  dataEmissao DateTime
+  cliente     Cliente  @relation(fields: [clienteId], references: [id])
+  clienteId   Int      @unique
+}
+
+model Telefone {
+  id        Int      @id @default(autoincrement())
+  ddd       String
+  numero    String
+  cliente   Cliente? @relation(fields: [clienteId], references: [id])
+  clienteId Int?
+}
+
+model Rg {
+  id          Int      @id @default(autoincrement())
+  valor       String
+  dataEmissao DateTime
+  Cliente     Cliente? @relation(fields: [clienteId], references: [id])
+  clienteId   Int?
+}
