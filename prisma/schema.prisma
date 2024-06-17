@@ -7,26 +7,26 @@ generator client {
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url      = "file:./dev.db"
 }
 
 model CompraProduto {
   id        Int     @id @default(autoincrement())
-  cliente   Cliente @relation(fields: [clienteId], references: [id])
+  cliente   Cliente @relation(fields: [clienteId], references: [id], onDelete: Cascade)
   clienteId Int
-  pet       Pet     @relation(fields: [petId], references: [id])
+  pet       Pet     @relation(fields: [petId], references: [id], onDelete: Cascade)
   petId     Int
-  produto   Produto @relation(fields: [produtoId], references: [id])
+  produto   Produto @relation(fields: [produtoId], references: [id], onDelete: Cascade)
   produtoId Int
 }
 
 model CompraServico {
   id        Int     @id @default(autoincrement())
-  cliente   Cliente @relation(fields: [clienteId], references: [id])
+  cliente   Cliente @relation(fields: [clienteId], references: [id], onDelete: Cascade)
   clienteId Int
-  pet       Pet     @relation(fields: [petId], references: [id])
+  pet       Pet     @relation(fields: [petId], references: [id], onDelete: Cascade)
   petId     Int
-  servico   Servico @relation(fields: [servicoId], references: [id])
+  servico   Servico @relation(fields: [servicoId], references: [id], onDelete: Cascade)
   servicoId Int
 }
 
@@ -61,7 +61,7 @@ model Pet {
   tipo          String
   raca          String
   genero        String
-  dono          Cliente         @relation(fields: [donoId], references: [id])
+  dono          Cliente         @relation(fields: [donoId], references: [id], onDelete: Cascade)
   donoId        Int
   CompraProduto CompraProduto[]
   CompraServico CompraServico[]
@@ -71,7 +71,7 @@ model Cpf {
   id          Int      @id @default(autoincrement())
   valor       String
   dataEmissao DateTime
-  cliente     Cliente  @relation(fields: [clienteId], references: [id])
+  cliente     Cliente  @relation(fields: [clienteId], references: [id], onDelete: Cascade)
   clienteId   Int      @unique
 }
 
@@ -79,7 +79,7 @@ model Telefone {
   id        Int      @id @default(autoincrement())
   ddd       String
   numero    String
-  cliente   Cliente? @relation(fields: [clienteId], references: [id])
+  cliente   Cliente? @relation(fields: [clienteId], references: [id], onDelete: Cascade)
   clienteId Int?
 }
 
@@ -87,6 +87,6 @@ model Rg {
   id          Int      @id @default(autoincrement())
   valor       String
   dataEmissao DateTime
-  Cliente     Cliente? @relation(fields: [clienteId], references: [id])
+  cliente     Cliente? @relation(fields: [clienteId], references: [id], onDelete: Cascade)
   clienteId   Int?
 }
