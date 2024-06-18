@@ -1,18 +1,43 @@
 import { Cliente, CompraProduto, CompraServico, Cpf, Pet, Produto, Rg, Servico, Telefone } from "@prisma/client";
 import fastify from "fastify";
+import cors from "@fastify/cors";
 import { prisma } from "./lib/prisma";
 
 const app = fastify()
+app.register(cors, { origin: '*', methods: ['GET', 'POST', 'PUT', 'DELETE'] })
 const port = 8000
 
 // Cliente
-app.post('/cliente/cadastrar', async (req, res) => {
+app.post('/cliente/cadastrar', async (req: any, res) => {
     const { nome, nomeSocial } = req.body as Cliente
+    const cpf = req.body.cpf as Cpf
+    const rg = req.body.rg as Rg
+    const telefone = req.body.telefone as Telefone
+
+    console.log(req.body);
 
     const user = await prisma.cliente.create({
         data: {
             nome,
-            nomeSocial
+            nomeSocial,
+            cpf: {
+                create: {
+                    valor: cpf.valor,
+                    dataEmissao: new Date(cpf.dataEmissao),
+                }
+            },
+            rgs: {
+                create: {
+                    valor: rg.valor,
+                    dataEmissao: new Date(rg.dataEmissao),
+                }
+            },
+            telefones: {
+                create: {
+                    ddd: telefone.ddd,
+                    numero: telefone.numero
+                }
+            }
         }
     })
 
@@ -33,9 +58,12 @@ app.get('/cliente/:id', async (req, res) => {
 app.get('/cliente/clientes', async (req, res) => {
     return await prisma.cliente.findMany({
         include: {
-            pets: true
+            pets: true,
+            telefones: true,
+            rgs: true,
+            cpf: true
         }
-    })
+    }) as Cliente[]
 })
 
 app.put('/cliente/editar', async (req, res) => {
@@ -64,15 +92,15 @@ app.delete('/cliente/deletar', async (req, res) => {
 
 // Pet
 app.post('/pet/cadastrar', async (req, res) => {
-    const { nome, tipo, genero, raca } = req.body as Pet
+    const { donoId, nome, tipo, genero, raca } = req.body as Pet
 
     const pet = await prisma.pet.create({
         data: {
+            donoId,
             nome,
             genero,
             raca,
-            tipo,
-            donoId: 1
+            tipo
         }
     })
 
@@ -127,8 +155,8 @@ app.delete('/pet/deletar', async (req, res) => {
 
 // Serviços
 
-app.post('/servicos/cadastrar', async (req, res) => {
-    const { nome,valor } = req.body as Servico
+app.post('/servico/cadastrar', async (req, res) => {
+    const { nome, valor } = req.body as Servico
 
     await prisma.servico.create({
         data: {
@@ -138,18 +166,18 @@ app.post('/servicos/cadastrar', async (req, res) => {
     })
 })
 
-app.get('/servicos/servicos', async (req, res) => {
+app.get('/servico/servicos', async (req, res) => {
     return await prisma.servico.findMany()
 })
 
-app.get('/servicos/:id', async (req, res) => {
+app.get('/servico/:id', async (req, res) => {
     const { id } = req.params as { id: string }
     return await prisma.servico.findFirstOrThrow({
         where: { id: parseInt(id) }
     })
 })
 
-app.put('/servicos/editar', async (req, res) => {
+app.put('/servico/editar', async (req, res) => {
     const { id, nome, valor } = req.body as Partial<Servico>
 
     await prisma.servico.update({
@@ -161,7 +189,7 @@ app.put('/servicos/editar', async (req, res) => {
     })
 })
 
-app.delete('/servicos/deletar', async (req, res) => {
+app.delete('/servico/deletar', async (req, res) => {
     const { id } = req.body as Partial<Servico>
 
     await prisma.servico.delete({
@@ -170,8 +198,8 @@ app.delete('/servicos/deletar', async (req, res) => {
 })
 
 // Produtos
-app.post('/produtos/cadastrar', async (req, res) => {
-    const { nome,valor } = req.body as Servico
+app.post('/produto/cadastrar', async (req, res) => {
+    const { nome, valor } = req.body as Servico
 
     await prisma.produto.create({
         data: {
@@ -183,18 +211,18 @@ app.post('/produtos/cadastrar', async (req, res) => {
     return res.status(200).send("Cadastrado com sucesso")
 })
 
-app.get('/produtos/produtos', async (req, res) => {
+app.get('/produto/produtos', async (req, res) => {
     return await prisma.produto.findMany()
 })
 
-app.get('/produtos/:id', async (req, res) => {
+app.get('/produto/:id', async (req, res) => {
     const { id } = req.params as { id: string }
     return await prisma.produto.findFirstOrThrow({
         where: { id: parseInt(id) }
     })
 })
 
-app.put('/produtos/editar', async (req, res) => {
+app.put('/produto/editar', async (req, res) => {
     const { id, nome, valor } = req.body as Partial<Produto>
 
     await prisma.produto.update({
@@ -206,7 +234,7 @@ app.put('/produtos/editar', async (req, res) => {
     })
 })
 
-app.delete('/produtos/deletar', async (req, res) => {
+app.delete('/produto/deletar', async (req, res) => {
     const { id } = req.body as Partial<Produto>
 
     await prisma.produto.delete({
