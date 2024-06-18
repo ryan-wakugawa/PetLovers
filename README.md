@@ -74,6 +74,10 @@ servidor (back-end) de modo assíncrono e escondido do usuário, "nos bastidores
 
     npm install
 
+### Garanta que a dependencia tsx está instalada:
+
+    npm install -D tsx
+
 ### Crie o banco de dados:
 
     npx prisma migrate dev --name init
