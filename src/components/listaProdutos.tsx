@@ -1,4 +1,8 @@
+import { useState } from "react"
+
 export default function ListaProduto({ tema } : {tema:string}) {
+    const [produtos, setProdutos] = useState([])
+
     return (
         <div className="container-fluid">
             <div className="list-group">

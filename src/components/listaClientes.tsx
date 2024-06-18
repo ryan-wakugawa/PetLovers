@@ -1,6 +1,27 @@
+import { useEffect, useState } from "react"
+import { Cliente, CompraProduto, CompraServico, Cpf, Pet, Produto, Rg, Servico, Telefone } from "@prisma/client";
+
 export default function ListaCliente({ tema } : {tema:string}) {
+    const [clientes, setClientes] = useState<Cliente[]>([])
+
+    const fetchClientes = async () =>{
+        try {
+            const response = await fetch('http://localhost:8000/cliente/clientes')
+            const data = await response.json() as Cliente[]
+            console.log(data);
+            setClientes(data)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        fetchClientes()
+    }, [])
+
     return (
         <div className="container-fluid">
+            <p>{clientes.map((cliente) => <div>{cliente.nome}</div>)}</p>
             <div className="list-group">
                 <div className="accordion" id="accordionExample">
                     <div className="accordion-item">

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import BarraNavegacao from "./barraNavegacao";
 import Compras from "./compras";
-import FormularioCadastroCliente from "./formularioCadastroCliente";
+import FormularioCadastroCliente from "./CadastroCliente/formularioCadastroCliente";
 import FormularioCadastroPet from "./formularioCadastroPet";
 import FormularioCadastroProduto from "./formularioCadastroProduto";
 import FormularioCadastroServico from "./formularioCadastroServico";

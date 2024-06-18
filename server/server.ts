@@ -128,11 +128,12 @@ app.delete('/pet/deletar', async (req, res) => {
 // Serviços
 
 app.post('/servicos/cadastrar', async (req, res) => {
-    const { nome } = req.body as Servico
+    const { nome,valor } = req.body as Servico
 
     await prisma.servico.create({
         data: {
-            nome
+            nome,
+            valor
         }
     })
 })
@@ -149,12 +150,13 @@ app.get('/servicos/:id', async (req, res) => {
 })
 
 app.put('/servicos/editar', async (req, res) => {
-    const { id, nome } = req.body as Partial<Servico>
+    const { id, nome, valor } = req.body as Partial<Servico>
 
     await prisma.servico.update({
         where: { id },
         data: {
-            nome
+            nome,
+            valor
         }
     })
 })
@@ -169,11 +171,12 @@ app.delete('/servicos/deletar', async (req, res) => {
 
 // Produtos
 app.post('/produtos/cadastrar', async (req, res) => {
-    const { nome } = req.body as Servico
+    const { nome,valor } = req.body as Servico
 
     await prisma.produto.create({
         data: {
-            nome
+            nome,
+            valor
         }
     })
 
@@ -192,12 +195,13 @@ app.get('/produtos/:id', async (req, res) => {
 })
 
 app.put('/produtos/editar', async (req, res) => {
-    const { id, nome } = req.body as Partial<Produto>
+    const { id, nome, valor } = req.body as Partial<Produto>
 
     await prisma.produto.update({
         where: { id },
         data: {
-            nome
+            nome,
+            valor
         }
     })
 })

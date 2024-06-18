@@ -1,4 +1,8 @@
+import { useState } from "react"
+
 export default function ListaServico({ tema } : {tema:string}) {
+    const [servicos, setServicos] = useState([])
+
     return (
         <div className="container-fluid">
             <div className="list-group">

@@ -1,4 +1,9 @@
+import { useContext, useState } from "react"
+
 export default function ListaPets({ tema } : {tema:string}) {
+    const [pets, setPets] = useState([])
+
+
     const gerarOpcoes = (opcoes: Array<string>) => {
         let lista = opcoes.map(valor =>
             <option value="1">{valor}</option>

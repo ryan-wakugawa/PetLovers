@@ -4,10 +4,15 @@ import React, { useState } from "react";
 import Switch from 'react-switch';
 import BarraCategorias from "./barraCategorias";
 
-export default function Ranking({ tema } : {tema:string}) {
+export default function Ranking({ tema }: { tema: string }) {
     const [tela, setTela] = useState('Clientes')
     const [clienteView, setClienteView] = useState(true)
     const [servicoProdutoView, setServicoProdutoView] = useState(true)
+    const [maisConsumiram, setMaisConsumiram] = useState({})
+    const [produtosMaisConsumidos, setProdutosMaisConsumidos] = useState({})
+    const [servicosMaisConsumidos, setServicosMaisConsumidos] = useState({})
+    const [tiposMaisConsumiram, setTiposMaisConsumiram] = useState({})
+    const [racaMaisConsumiram, setRacaMaisConsumiram] = useState({})
 
     const selecionarView = (novaTela: string, evento: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         evento.preventDefault();
