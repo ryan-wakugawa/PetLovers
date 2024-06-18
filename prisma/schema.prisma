@@ -33,12 +33,14 @@ model CompraServico {
 model Produto {
   id            Int             @id @default(autoincrement())
   nome          String
+  valor         Int
   CompraProduto CompraProduto[]
 }
 
 model Servico {
   id            Int             @id @default(autoincrement())
   nome          String
+  valor         Int
   CompraServico CompraServico[]
 }
 
