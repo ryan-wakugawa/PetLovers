@@ -1,4 +1,9 @@
+import { useState } from "react";
+
 export default function FormularioCadastroProduto({ tema } : {tema:string}) {
+    const [nome, setNome] = useState('');
+    const [preco, setPreco] = useState(0);
+
     return (
         <div className="h-100 container-fluid">
             <h3>Produto</h3>

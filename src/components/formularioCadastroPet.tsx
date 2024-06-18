@@ -1,10 +1,19 @@
-export default function FormularioCadastroPet({ tema } : {tema:string}) {
+import { useState } from "react";
+
+export default function FormularioCadastroPet({ tema }: { tema: string }) {
+    const [dono, setDono] = useState('');
+    const [nome, setNome] = useState('');
+    const [genero, setGenero] = useState('');
+    const [raca, setRaca] = useState('');
+    const [tipo, setTipo] = useState('');
+
     const gerarOpcoes = (opcoes: Array<string>) => {
         let lista = opcoes.map(valor =>
             <option value="1">{valor}</option>
         )
         return lista
     }
+
     return (
         <div className="h-100 align-content-around  container-fluid">
             <h3>Pet</h3>
@@ -17,6 +26,12 @@ export default function FormularioCadastroPet({ tema } : {tema:string}) {
                 </div>
                 <div className="input-group mb-3">
                     <input type="text" className="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1" />
+                </div>
+                <div className="input-group mb-3">
+                    <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                </div>
+                <div className="input-group mb-3">
+                    <input type="text" className="form-control" placeholder="Raça" aria-label="Raca" aria-describedby="basic-addon1" />
                 </div>
                 <div className="input-group mb-3">
                     <select className="form-select" placeholder="Selecione o dono" aria-label="petDono">

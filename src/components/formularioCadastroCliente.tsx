@@ -1,4 +1,14 @@
-export default function FormularioCadastroCliente({tema}){
+import { useState } from "react";
+
+export default function FormularioCadastroCliente({ tema }) {
+  const [nome, setNome] = useState('');
+  const [nomeSocial, setNomeSocial] = useState('');
+  const [cpf, setCpf] = useState('');
+  const [dataEmissao, setDataEmissao] = useState(new Date());
+  const [rg, setRg] = useState('');
+  const [dataEmissaoRg, setDataEmissaoRg] = useState(new Date());
+  const [telefone, setTelefone] = useState();
+
   return (
     <div className="h-100 container-fluid">
       <h3>Cliente</h3>
@@ -63,8 +73,8 @@ export default function FormularioCadastroCliente({tema}){
         <div className="d-flex justify-content-center input-group mt-auto mb-5">
           <button
             className="btn btn-outline-secondary"
-            type="button"
-            style={{ background: tema}}
+            type="submit"
+            style={{ background: tema }}
           >
             Cadastrar
           </button>
