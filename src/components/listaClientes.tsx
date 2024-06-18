@@ -7,7 +7,7 @@ export default function ListaCliente({ tema } : {tema:string}) {
     const fetchClientes = async () =>{
         try {
             const response = await fetch('http://localhost:8000/cliente/clientes')
-            const data = await response.json() as Cliente[]
+            const data = await response.json()
             console.log(data);
             setClientes(data)
         } catch (error) {
