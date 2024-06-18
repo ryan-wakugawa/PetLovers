@@ -1,70 +1,95 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Atividade Prática - ATV V
 
-## Available Scripts
+Atividade da Lista V da disciplina de Programação Orientada a Objetos do Professor Dr. Eng. Gerson Penha da FATEC São José dos Campos
 
-In the project directory, you can run:
+## Ferramentas e Tecnologias
 
-### `npm start`
+* VSCode
+* Node.js
+* React
+* Fastify
+* Prisma
+* SQLite
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Linguagens
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* TypeScript
 
-### `npm test`
+# Contextualização:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Uma aplicação distribuída consiste em um ou mais clientes locais ou remotos que se comunicam com um ou
+mais servidores em várias máquinas conectadas por meio de uma rede. Com esse tipo de aplicação, as
+operações e processamentos podem ser realizados de qualquer local geográfico. Esta forma de organizar
+aplicações é denominada de arquitetura distribuída.
 
-### `npm run build`
+As aplicações distribuídas podem ser relativamente simples, exigindo um único computador cliente e um
+único servidor, ou mais complexas, permitindo muitos computadores clientes e vários servidores. Por
+exemplo, os navegadores da web são aplicativos distribuídos. Outro exemplo são os sites de venda on-line,
+utilizados pela maioria das corporações do mercado de varejo. Estas corporações podem distribuir operações
+como: previsão de vendas, fazer encomendas, fabricação de produtos, envio de produtos, controle de
+faturamento e atualização do banco de dados corporativo. Tudo pode ficar distribuído em uma grande região
+ou até mesmo em fronteiras internacionais.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+As redes de telecomunicações e dados de última geração estão tornando as operações distribuídas desse tipo
+cada vez mais comuns. As aplicações desenvolvidas para implementar esse tipo de estratégia permitem que
+as empresas reduzam custos e aprimorem suas ofertas de serviços para clientes em todo o mundo.
+Outra preocupação das empresas é com a experiência dos seus usuários, não basta apenas ter alta
+disponibilidade de serviços, os usuários precisam se sentir confortáveis ao usar seus produtos digitais. Por
+isso, junto da arquitetura distribuída, cabe o destaque ao conceito de aplicação de página única (single-page
+application - SPA). Também pode ser denominado como aplicativo de página única.
+Uma SPA é uma aplicação web, que consiste em uma única página com o objetivo de fornecer uma
+experiência do usuário similar à de um aplicativo desktop.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Em uma SPA, todo o código necessário - HTML, JavaScript e CSS - é obtido com um único carregamento de
+página, demais recursos apropriados são carregados dinamicamente e adicionados à página conforme
+necessário, geralmente em resposta a ações do usuário.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A página não é recarregada em qualquer momento do processo, tampouco ocorre a transferência de controle
+para outra página, embora a URL no navegador possa ser usada para fornecer a percepção e navegabilidade
+de páginas separadas ao aplicativo. A interação com SPA muitas vezes envolve comunicação dinâmica com o
+servidor (back-end) de modo assíncrono e escondido do usuário, "nos bastidores".
 
-### `npm run eject`
+## Requisitos implementados
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Criação de um back-end
+- Criação de um banco de dados
+- Conexão entre o front-end e o back-end
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Como rodar o projeto
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Clone o repositório:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    git clone https://github.com/ryan-wakugawa/PetLovers.git
 
-## Learn More
+### Navegue para o diretório correto:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    cd PetLovers
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Mude para a branch "lista-5":
 
-### Code Splitting
+    git checkout lista-5
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Instale as dependências:
 
-### Analyzing the Bundle Size
+    npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Crie o banco de dados:
 
-### Making a Progressive Web App
+    npx prisma migrate dev --name init
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Execute o back-end:
 
-### Advanced Configuration
+    npm run server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  ou
 
-### Deployment
+    npx tsx src/server/server.ts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Execute o front-end:
 
-### `npm run build` fails to minify
+    npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Créditos
+
+Atividade elaborada pelo [Professor Dr. Eng. Gerson Penha](https://github.com/gerson-pn)
