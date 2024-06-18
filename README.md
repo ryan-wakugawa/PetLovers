@@ -14,7 +14,8 @@ A humanidade utiliza animais como suporte em suas atividades há muito tempo. Al
 Outra designação importante é a de “mercado pet”. Mercado pet denota a fatia de mercado que agrupa empresas de produtos e/ou serviços exclusivos para animais, que se encaixam na definição de Pet. Este setor abrange produtos, serviços e comércio de animais de estimação, com destaque principal para a venda de alimentos industrializados.
 
 O mercado pet teve um crescimento de 14% em 2022, com um faturamento de R$ 58,9 bilhões, segundo estimativas do Instituto Pet Brasil (IPB). O segmento de Pet Food liderou com um faturamento de R$ 33,1 bilhões nos primeiros três meses de 2022, representando 56,3% do faturamento total do mercado pet e uma alta de 16,7% em relação a 2021.
-Atividade:
+
+## Atividade:
 
 Você é um empreendedor atento ao potencial do mercado pet e, como um engenheiro de software formidável, decidiu criar uma empresa especializada no desenvolvimento de sistemas para gerenciamento de lojas neste segmento. Sua empresa, Computer4Pet (C4P), visa desenvolver sistemas para atender lojas de comércio eletrônico, pet shops e clínicas veterinárias.
 
