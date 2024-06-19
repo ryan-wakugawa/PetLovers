@@ -25,7 +25,7 @@ export async function sendData(donoId: number, nome: string, genero: string, rac
         }
     }).catch(error => {
         console.log(error)
-        console.log('Erro ao cadastrar')
+        alert('Erro ao cadastrar')
     })
 }
 

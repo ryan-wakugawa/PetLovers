@@ -1,23 +1,45 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Switch from 'react-switch';
 import BarraCategorias from "./barraCategorias";
+
+interface RankingEntry {
+    nome: string,
+    total: number
+}
 
 export default function Ranking({ tema }: { tema: string }) {
     const [tela, setTela] = useState('Clientes')
     const [clienteView, setClienteView] = useState(true)
     const [servicoProdutoView, setServicoProdutoView] = useState(true)
-    const [maisConsumiram, setMaisConsumiram] = useState({})
-    const [produtosMaisConsumidos, setProdutosMaisConsumidos] = useState({})
-    const [servicosMaisConsumidos, setServicosMaisConsumidos] = useState({})
-    const [tiposMaisConsumiram, setTiposMaisConsumiram] = useState({})
-    const [racaMaisConsumiram, setRacaMaisConsumiram] = useState({})
+    const [maisConsumiramQuantidade, setMaisConsumiramQuantidade] = useState<Array<RankingEntry>>([])
+    const [maisConsumiramValor, setMaisConsumiramValor] = useState<Array<RankingEntry>>([])
+    const [produtosMaisConsumidos, setProdutosMaisConsumidos] = useState<Array<RankingEntry>>([])
+    const [servicosMaisConsumidos, setServicosMaisConsumidos] = useState<Array<RankingEntry>>([])
+    const [tiposMaisConsumiram, setTiposMaisConsumiram] = useState<Array<RankingEntry>>([])
+    const [racaMaisConsumiram, setRacaMaisConsumiram] = useState<Array<RankingEntry>>([])
+
+    const fetchAll = async () => {
+        const rankingClientesQuantidade = await (await fetch('http://localhost:8000/ranking/clientes/quantidade')).json()
+        const rankingClientesValor = await (await fetch('http://localhost:8000/ranking/clientes/valor')).json()
+        const rankingProdutos = await (await fetch('http://localhost:8000/ranking/produtos')).json()
+        const rankingServicos = await (await fetch('http://localhost:8000/ranking/servicos')).json()
+        const listaServicos = await (await fetch('http://localhost:8000/servico/servicos')).json()
+        setMaisConsumiramQuantidade(rankingClientesQuantidade)
+        setMaisConsumiramValor(rankingClientesValor)
+        setProdutosMaisConsumidos(rankingProdutos)
+        setServicosMaisConsumidos(rankingServicos)
+    }
 
     const selecionarView = (novaTela: string, evento: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         evento.preventDefault();
         setTela(novaTela)
     }
+
+    useEffect(() => {
+        fetchAll()
+    }, [])
 
     return (
         <>
@@ -59,19 +81,12 @@ export default function Ranking({ tema }: { tema: string }) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Cliente A</td>
-                                            <td>X</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cliente B</td>
-                                            <td>X</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cliente C</td>
-                                            <td>X</td>
-                                        </tr>
-                                        {/* Adicione mais linhas conforme necessário */}
+                                        {maisConsumiramQuantidade.map(entry => (
+                                            <tr>
+                                                <td>{entry.nome}</td>
+                                                <td>{entry.total}</td>
+                                            </tr>
+                                        ))}
                                     </tbody>
                                 </table>
                             </div>
@@ -101,18 +116,12 @@ export default function Ranking({ tema }: { tema: string }) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Cliente A</td>
-                                            <td>R$Y</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cliente B</td>
-                                            <td>R$Y</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cliente C</td>
-                                            <td>R$Y</td>
-                                        </tr>
+                                        {maisConsumiramValor.map(entry => (
+                                            <tr>
+                                                <td>{entry.nome}</td>
+                                                <td>{entry.total}</td>
+                                            </tr>
+                                        ))}
                                     </tbody>
                                 </table>
                             </div>
@@ -148,18 +157,12 @@ export default function Ranking({ tema }: { tema: string }) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Serviço A</td>
-                                            <td>X</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Serviço B</td>
-                                            <td>X</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Serviço C</td>
-                                            <td>X</td>
-                                        </tr>
+                                        {servicosMaisConsumidos.map(entry => (
+                                            <tr>
+                                                <td>{entry.nome}</td>
+                                                <td>{entry.total}</td>
+                                            </tr>
+                                        ))}
                                     </tbody>
                                 </table>
                             </div>
@@ -190,18 +193,12 @@ export default function Ranking({ tema }: { tema: string }) {
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Produto A</td>
-                                            <td>X</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Produto B</td>
-                                            <td>X</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Produto C</td>
-                                            <td>X</td>
-                                        </tr>
+                                        {produtosMaisConsumidos.map(entry => (
+                                            <tr>
+                                                <td>{entry.nome}</td>
+                                                <td>{entry.total}</td>
+                                            </tr>
+                                        ))}
                                     </tbody>
                                 </table>
                             </div>

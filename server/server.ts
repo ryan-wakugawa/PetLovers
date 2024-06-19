@@ -390,6 +390,120 @@ app.get('/telefones/:id', async (req, res) => {
     })
 })
 
+// Ranking
+app.get('/ranking/clientes/quantidade', async (req, res) => {
+    const clientes = await prisma.cliente.findMany() as Cliente[]
+
+    let listaTotal = await Promise.all(clientes.map(async cliente => {
+        const totalProduto = await prisma.compraProduto.count({
+            where: {
+                clienteId: cliente.id
+            }
+        })
+        const totalServico = await prisma.compraServico.count({
+            where: {
+                clienteId: cliente.id
+            }
+        })
+
+        return { nome: cliente.nome, total: totalProduto + totalServico }
+    }))
+
+    return listaTotal.sort((a, b) => b.total - a.total)
+})
+
+app.get('/ranking/clientes/valor', async (req, res) => {
+    const clientes = await prisma.cliente.findMany() as Cliente[]
+
+    let listaTotal = await Promise.all(clientes.map(async cliente => {
+        const totalProduto = await prisma.compraProduto.findMany({
+            where: {
+                clienteId: cliente.id
+            }, include: {
+                produto: true
+            }
+        })
+        const totalServico = await prisma.compraServico.findMany({
+            where: {
+                clienteId: cliente.id
+            }, include: {
+                servico: true
+            }
+        })
+
+        const valorTotalProduto = totalProduto.reduce((acc, e) => acc + e.produto.valor, 0)
+        const valorTotalServico = totalServico.reduce((acc, e) => acc + e.servico.valor, 0)
+        return { nome: cliente.nome, total: valorTotalProduto + valorTotalServico }
+    }))
+
+    return listaTotal.sort((a, b) => b.total - a.total)
+})
+
+app.get('/ranking/produtos', async (req, res) => {
+    const produtos = await prisma.produto.findMany() as Produto[]
+
+    let listaTotal = await Promise.all(produtos.map(async produto => {
+        const totalProduto = await prisma.compraProduto.count({
+            where: {
+                produtoId: produto.id
+            }
+        })
+
+        return { nome: produto.nome, total: totalProduto }
+    }))
+
+    return listaTotal.sort((a, b) => b.total - a.total)
+})
+
+app.get('/ranking/pets/servicos', async (req, res) => {
+    const servicos = await prisma.servico.findMany() as Servico[]
+
+    let listaTotal = await Promise.all(servicos.map(async servico => {
+        const totalServico = await prisma.compraServico.count({
+            where: {
+                servicoId: servico.id
+            }
+        })
+
+        return { nome: servico.nome, total: totalServico }
+    }))
+
+    return listaTotal.sort((a, b) => b.total - a.total)
+})
+app.get('/ranking/pets/produtos', async (req, res) => {
+    // const pets = await prisma.pet.findMany() as Pet[]
+
+    // const teste = await prisma.compraProduto.groupBy({
+         
+    // })
+
+    // let listaTotal = await Promise.all(pets.map(async pet => {
+    //     const totalProduto = await prisma.compraProduto.count({
+    //         where: {
+    //             petId: pet.id
+    //         }
+    //     })
+    //     return { nome: pet.nome, total: totalProduto }
+    // }))
+
+    // return listaTotal.sort((a, b) => b.total - a.total)
+})
+
+app.get('/ranking/servicos', async (req, res) => {
+    const servicos = await prisma.servico.findMany() as Servico[]
+
+    let listaTotal = await Promise.all(servicos.map(async servico => {
+        const totalServico = await prisma.compraServico.count({
+            where: {
+                servicoId: servico.id
+            }
+        })
+
+        return { nome: servico.nome, total: totalServico }
+    }))
+
+    return listaTotal.sort((a, b) => b.total - a.total)
+})
 
 // Inicia backend
 app.listen({ port: port }, (error) => {

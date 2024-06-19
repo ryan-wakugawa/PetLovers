@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import BarraNavegacao from "./barraNavegacao";
-import Compras from "./compras";
+import Compras from "./CadastroCompras/compras";
 import FormularioCadastroCliente from "./CadastroCliente/formularioCadastroCliente";
 import FormularioCadastroPet from "./CadastroPet/formularioCadastroPet";
 import FormularioCadastroProduto from "./CadastroProduto/formularioCadastroProduto";
 import FormularioCadastroServico from "./CadastroServico/formularioCadastroServico";
 import ListaCliente from "./ListaClientes/listaClientes";
 import ListaPets from "./ListaPets/listaPets";
-import ListaProduto from "./listaProdutos";
-import ListaServico from "./listaServicos";
+import ListaProduto from "./ListaProdutos/listaProdutos";
+import ListaServico from "./ListaServicos/listaServicos";
 import Ranking from "./ranking";
 
 

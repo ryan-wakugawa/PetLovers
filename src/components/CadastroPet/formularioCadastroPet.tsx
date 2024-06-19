@@ -34,7 +34,7 @@ export default function FormularioCadastroPet({ tema }: { tema: string }) {
         return lista
     }
 
-    const pegarClientes = async () => {
+    const fetchClientes = async () => {
         const listaClientes = await getClientes()
         setClientes(listaClientes)
     }
@@ -55,7 +55,7 @@ export default function FormularioCadastroPet({ tema }: { tema: string }) {
     }
 
     useEffect(() => {
-        pegarClientes()
+        fetchClientes()
     }, [])
 
     return (
@@ -78,7 +78,7 @@ export default function FormularioCadastroPet({ tema }: { tema: string }) {
                     <input type="text" className="form-control" placeholder="Raça" aria-label="Raca" value={raca} onChange={(event) => setRaca(event.target.value)} />
                 </div>
                 <div className="input-group mb-3">
-                    <select className="form-select" placeholder="Selecione o dono" aria-label="petDono" onChange={(event) => setGenero(event.target.value)}>
+                    <select className="form-select" placeholder="Selecione o genero" aria-label="petDono" onChange={(event) => setGenero(event.target.value)}>
                         <option disabled selected>Gênero</option>
                         <option value={"Macho"}>Macho</option>
                         <option value={"Femea"}>Fêmea</option>
