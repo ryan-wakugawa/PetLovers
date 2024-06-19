@@ -1,70 +1,61 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Atividade Prática - ATV V
 
-## Available Scripts
+Atividade da Lista V da disciplina de Programação Orientada a Objetos do Professor Dr. Eng. Gerson Penha da FATEC São José dos Campos
 
-In the project directory, you can run:
+## Ferramentas e Tecnologias
 
-### `npm start`
+<div align="center">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+</div>
 
-### `npm test`
+## Linguagens
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div align="center">
 
-### `npm run build`
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+</div>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Contextualização:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A biblioteca react evoluiu bastante nos últimos anos,uma das principais evoluções foi a introdução de hooks (ganchos). Os hooks foram adicionados na versão 16.8, da react. Eles permitem usar o state e outros recursos sem utilizar componentes de classe, ou seja, apenas com componentes de função.Hooks  são  funções  JavaScript,  deve-se  seguir  duas  regras  ao usá-los.  Não  se  usa  hooks  dentro  de  loops, condições ou funções aninhadas. Em vez disso, sempre se utiliza hooks no nível superior de um componente de função, antes de qualquer retorno. Não se usa hooks em funções JavaScript regulares, ou seja, funções quenão são componentes react.
 
-### `npm run eject`
+## Atividade
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+O  time  de  desenvolvimento  da  tua  empresa  impôs  uma  regra  para  construção  da  GUI  do  sistema.  Utilizar  a biblioteca  react  com  componentes  de  classe,  sempre.Mas,  você  percebeu  a  necessidade  de  avaliar  o desenvolvimento com  hooks.  Além  disso,  descobriu-se  que  existe uma  versãodo  pré-projeto  que  utilizou hooks e somente componentes de função.A versão do pré-projeto com hooks pode seracessadano endereço https://github.com/gerson-pn/atviii-pl-typescript. Código para auxiliar o desenvolvimento da atviii.O  objetivo  é  construir  a  mesma  GUI,  feita  anteriormente  com  componentes  de  classe,  mas  agora  com componentes  de  função  e,  se  necessário,  utilizando  hooks  para controle  do  ciclo  de  vida  dos  componentes.
+Para  este  pré-projeto,  deve-se  utilizar  as  mesmas  bibliotecas,  citadas  no  projeto  anterior,  com  as  mesmas ressalvase versão.A  documentação  sobre  hooks  está  disponível  no  endereço https://reactjs.org/docs/hooks-intro.html.  Mas cabe ressaltar que a última verificação, uma vez que o time leu sobre o assunto, foi há 2 meses. Por isso, não há  garantia  que  a  documentação  ainda  esteja  disponível  ou  se  houve  modificação  na  documentação.  Você terá que verificar isto sem aajuda do time de desenvolvimento
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Requisitos implementados
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Mudança dos componentes de classes para funções
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Como rodar o projeto
 
-## Learn More
+### Clone o repositório:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    git clone https://github.com/ryan-wakugawa/PetLovers.git
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Navegue para o diretório correto:
 
-### Code Splitting
+    cd PetLovers
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Mude para a branch "lista-5":
 
-### Analyzing the Bundle Size
+    git checkout lista-3
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Instale as dependências:
 
-### Making a Progressive Web App
+    npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Execute o projeto:
 
-### Advanced Configuration
+    npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Créditos
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Atividade elaborada pelo [Professor Dr. Eng. Gerson Penha](https://github.com/gerson-pn)
