@@ -57,7 +57,7 @@ Talvez  o  código  disponível  no  repositório  do  pré-projeto  back-end  s
 
     cd PetLovers
 
-### Mude para a branch "lista-5":
+### Mude para a branch "lista-4":
 
     git checkout lista-4
 
