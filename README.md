@@ -33,15 +33,17 @@ No pré-projeto, utilizou-seuma biblioteca para construção de interfaces com H
 
 ### Clone o repositório:
 
-    git clone https://github.com/gerson-pn/atvi-pl-typescript
+    git clone https://github.com/ryan-wakugawa/PetLovers.git
 
-### Mude a branch pra "lista-2"
+### Navegue para o diretório correto:
+    cd PetLovers
+
+### Mude a branch pra "lista-2":
 
     git checkout lista-2
 
 ### Instale as dependências:
 
-    cd atvi-pl-typescript
     npm install
 
 ### Execute o projeto:
