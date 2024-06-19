@@ -43,7 +43,7 @@ Para  este  pré-projeto,  deve-se  utilizar  as  mesmas  bibliotecas,  citadas 
 
     cd PetLovers
 
-### Mude para a branch "lista-5":
+### Mude para a branch "lista-3":
 
     git checkout lista-3
 
