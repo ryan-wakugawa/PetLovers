@@ -1,11 +1,16 @@
+
 # Atividade Prática - ATV I
+
 Atividade da Lista I da disciplina de Programação Orientada a Objetos do Professor Dr. Eng. Gerson Penha da FATEC São José dos Campos
 
 ## Ferramentas:
-  * VSCode
-  * Node.js
+
+* VSCode
+* Node.js
+
 ## Linguagens:
-  * TypeScript
+
+* TypeScript
 
 # Contextualização:
 
@@ -15,13 +20,16 @@ Outra designação importante é a de “mercado pet”. Mercado pet denota a fa
 
 O mercado pet teve um crescimento de 14% em 2022, com um faturamento de R$ 58,9 bilhões, segundo estimativas do Instituto Pet Brasil (IPB). O segmento de Pet Food liderou com um faturamento de R$ 33,1 bilhões nos primeiros três meses de 2022, representando 56,3% do faturamento total do mercado pet e uma alta de 16,7% em relação a 2021.
 
-## Atividade:
+Atividade:
+
+## Atividade
 
 Você é um empreendedor atento ao potencial do mercado pet e, como um engenheiro de software formidável, decidiu criar uma empresa especializada no desenvolvimento de sistemas para gerenciamento de lojas neste segmento. Sua empresa, Computer4Pet (C4P), visa desenvolver sistemas para atender lojas de comércio eletrônico, pet shops e clínicas veterinárias.
 
 O primeiro projeto de investimento é um sistema CLI (Command-Line Interface) chamado PetLovers (PL), pensado para gerenciar pet shops e/ou clínicas veterinárias. A primeira versão do software foi desenvolvida por uma "software house", acessível pelo endereço: [Repositório GitHub](https://github.com/gerson-pn/atvi-pl-typescript). O código original pode ser encontrado no link mencionado anteriormente.
 
 ## Requisitos implementados
+
 - CRUD (Create, Read, Update e Delete) de clientes e seus respectivos Pets.
 - CRUD de produtos e serviços.
 - Registro de consumo dos produtos ou serviços que cada cliente adquiriu.
@@ -32,13 +40,22 @@ O primeiro projeto de investimento é um sistema CLI (Command-Line Interface) ch
 
 ## Como rodar o projeto
 
+### Execute o projeto:
+
 ### Clone o repositório:
 
-    git clone https://github.com/gerson-pn/atvi-pl-typescript
+    git clone https://github.com/ryan-wakugawa/PetLovers.git
+
+### Navegue para o diretório correto:
+
+    cd PetLovers
+
+### Mude para a branch "lista-1":
+
+    git checkout lista-1
 
 ### Instale as dependências:
 
-    cd atvi-pl-typescript
     npm install
 
 ### Execute o projeto:
@@ -46,14 +63,17 @@ O primeiro projeto de investimento é um sistema CLI (Command-Line Interface) ch
     npm run dev
 
   ou
-  
+
     tsc
+
     node out/app/main.js
 
 ### Estrutura do Projeto
 
     src/ - Contém os arquivos fonte do projeto
+
     out/ - Contém os arquivos compilados
 
 ## Créditos
+
 Atividade elaborada pelo [Professor Dr. Eng. Gerson Penha](https://github.com/gerson-pn)
