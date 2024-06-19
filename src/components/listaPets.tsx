@@ -41,15 +41,21 @@ export default class ListaPets extends Component<props> {
                                                 <input type="text" className="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1" />
                                             </div>
                                             <div className="input-group mb-3">
+                                                <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                                            </div>
+                                            <div className="input-group mb-3">
+                                                <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
+                                            </div>
+                                            <div className="input-group mb-3">
                                                 <select className="form-select" placeholder="Selecione o dono" aria-label="petDono">
                                                     <option selected>Macho</option>
                                                     {this.gerarOpcoes(['Fêmea'])}
                                                 </select>
                                             </div>
-                                    <div className="d-flex justify-content-center">
-                                        <button className="btn btn-outline-secondary m-1" type="button" style={{ background: tema }}>Editar</button>
-                                        <button className="btn btn-danger m-1" type="button">Excluir</button>
-                                    </div>
+                                            <div className="d-flex justify-content-center">
+                                                <button className="btn btn-outline-secondary m-1" type="button" style={{ background: tema }}>Editar</button>
+                                                <button className="btn btn-danger m-1" type="button">Excluir</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -76,15 +82,21 @@ export default class ListaPets extends Component<props> {
                                                 <input type="text" className="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1" />
                                             </div>
                                             <div className="input-group mb-3">
+                                                <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                                            </div>
+                                            <div className="input-group mb-3">
+                                                <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
+                                            </div>
+                                            <div className="input-group mb-3">
                                                 <select className="form-select" placeholder="Selecione o dono" aria-label="petDono">
                                                     <option selected>Fêmea</option>
                                                     {this.gerarOpcoes(['Macho'])}
                                                 </select>
                                             </div>
-                                    <div className="d-flex justify-content-center">
-                                        <button className="btn btn-outline-secondary m-1" type="button" style={{ background: tema }}>Editar</button>
-                                        <button className="btn btn-danger m-1" type="button">Excluir</button>
-                                    </div>
+                                            <div className="d-flex justify-content-center">
+                                                <button className="btn btn-outline-secondary m-1" type="button" style={{ background: tema }}>Editar</button>
+                                                <button className="btn btn-danger m-1" type="button">Excluir</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -111,15 +123,21 @@ export default class ListaPets extends Component<props> {
                                                 <input type="text" className="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1" />
                                             </div>
                                             <div className="input-group mb-3">
+                                                <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                                            </div>
+                                            <div className="input-group mb-3">
+                                                <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
+                                            </div>
+                                            <div className="input-group mb-3">
                                                 <select className="form-select" placeholder="Selecione o dono" aria-label="petDono">
                                                     <option selected>Gênero</option>
                                                     {this.gerarOpcoes(['Macho', 'Fêmea'])}
                                                 </select>
                                             </div>
-                                    <div className="d-flex justify-content-center">
-                                        <button className="btn btn-outline-secondary m-1" type="button" style={{ background: tema }}>Editar</button>
-                                        <button className="btn btn-danger m-1" type="button">Excluir</button>
-                                    </div>
+                                            <div className="d-flex justify-content-center">
+                                                <button className="btn btn-outline-secondary m-1" type="button" style={{ background: tema }}>Editar</button>
+                                                <button className="btn btn-danger m-1" type="button">Excluir</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
@@ -146,15 +164,21 @@ export default class ListaPets extends Component<props> {
                                                 <input type="text" className="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1" />
                                             </div>
                                             <div className="input-group mb-3">
+                                                <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                                            </div>
+                                            <div className="input-group mb-3">
+                                                <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
+                                            </div>
+                                            <div className="input-group mb-3">
                                                 <select className="form-select" placeholder="Selecione o dono" aria-label="petDono">
                                                     <option selected>Gênero</option>
                                                     {this.gerarOpcoes(['Macho', 'Fêmea'])}
                                                 </select>
                                             </div>
-                                    <div className="d-flex justify-content-center">
-                                        <button className="btn btn-outline-secondary m-1" type="button" style={{ background: tema }}>Editar</button>
-                                        <button className="btn btn-danger m-1" type="button">Excluir</button>
-                                    </div>
+                                            <div className="d-flex justify-content-center">
+                                                <button className="btn btn-outline-secondary m-1" type="button" style={{ background: tema }}>Editar</button>
+                                                <button className="btn btn-danger m-1" type="button">Excluir</button>
+                                            </div>
                                         </form>
                                     </div>
 
@@ -182,15 +206,21 @@ export default class ListaPets extends Component<props> {
                                                 <input type="text" className="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1" />
                                             </div>
                                             <div className="input-group mb-3">
+                                                <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                                            </div>
+                                            <div className="input-group mb-3">
+                                                <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
+                                            </div>
+                                            <div className="input-group mb-3">
                                                 <select className="form-select" placeholder="Selecione o dono" aria-label="petDono">
                                                     <option selected>Gênero</option>
                                                     {this.gerarOpcoes(['Macho', 'Fêmea'])}
                                                 </select>
                                             </div>
-                                    <div className="d-flex justify-content-center">
-                                        <button className="btn btn-outline-secondary m-1" type="button" style={{ background: tema }}>Editar</button>
-                                        <button className="btn btn-danger m-1" type="button">Excluir</button>
-                                    </div>
+                                            <div className="d-flex justify-content-center">
+                                                <button className="btn btn-outline-secondary m-1" type="button" style={{ background: tema }}>Editar</button>
+                                                <button className="btn btn-danger m-1" type="button">Excluir</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>

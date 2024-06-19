@@ -28,6 +28,12 @@ export default class FormularioCadastroPet extends Component<props> {
                         <input type="text" className="form-control" placeholder="Nome" aria-label="Nome" aria-describedby="basic-addon1" />
                     </div>
                     <div className="input-group mb-3">
+                        <input type="text" className="form-control" placeholder="Tipo" aria-label="Tipo" aria-describedby="basic-addon1" />
+                    </div>
+                    <div className="input-group mb-3">
+                        <input type="text" className="form-control" placeholder="Raça" aria-label="Raça" aria-describedby="basic-addon1" />
+                    </div>
+                    <div className="input-group mb-3">
                         <select className="form-select" placeholder="Selecione o dono" aria-label="petDono">
                             <option selected>Gênero</option>
                             {this.gerarOpcoes(['Macho', 'Fêmea'])}
